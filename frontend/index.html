@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MediLogic - Pacientes</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main>
+    <header><span>PROTOTIPO ACADEMICO</span><h1>MediLogic</h1><p>Orientacion diagnostica preliminar mediante reglas logicas.</p></header>
+    <section class="notice">Esta herramienta no sustituye una consulta medica profesional.</section>
+    <section class="card">
+      <h2>Modulo de pacientes</h2>
+      <label>Sintoma principal
+        <select id="sintoma"><option>tos</option><option>fiebre</option><option>dolor_cabeza</option><option>nausea</option></select>
+      </label>
+      <label>Severidad
+        <select id="severidad"><option>leve</option><option>moderado</option><option>severo</option></select>
+      </label>
+      <button id="analizar">Analizar sintoma</button>
+      <pre id="resultado">El resultado aparecera aqui.</pre>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
