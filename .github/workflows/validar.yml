@@ -1,0 +1,25 @@
+name: Validar MediLogic
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar SWI-Prolog
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y swi-prolog-nox
+
+      - name: Validar sintaxis de Python
+        run: python -m py_compile backend/app.py backend/prolog_service.py
+
+      - name: Ejecutar cinco consultas Python-Prolog
+        working-directory: backend
+        run: python prolog_service.py
